@@ -9,6 +9,64 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="/src/img/Icones/Logo.png" />
+
+    <!-- META TAG OG -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bolt Pan - Controle Financeiro" />
+    <meta
+      property="og:image"
+      content="https://boltpan.com.br/src/img/icones/Logo2.jpg"
+    />
+    <meta
+      property="og:description"
+      content="Controle financeiro profissional direto no seu WhatsApp por apenas R$ 7,99/mês."
+    />
+    <meta property="og:url" content="https://boltpan.com.br" />
+    <meta property="og:site_name" content="Bolt Pan" />
+
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1648049966361338");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1648049966361338&ev=PageView&noscript=1"
+    /></noscript>
+
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=SEU_ID_DO_PIXEL&ev=PageView&noscript=1"
+    /></noscript>
   </head>
   <body>
     <header>
@@ -55,7 +113,7 @@
 
           <div class="about-image">
             <img
-              src="./src/img/preocupados com os gastos.jpg"
+              src="./src/img/preocupado-com-os-gastos.jpeg"
               alt="Casal analisando finanças e planilhas"
             />
           </div>
@@ -118,7 +176,7 @@
 
         <div class="about-image">
           <img
-            src="./src/img/angry-young-female-feeling-depressed-squeezing-temples-trying-solve-financial-problems.jpg"
+            src="./src/img/casal-preocupado-com-financas.jpeg"
             alt="Casal preocupado com finanças"
           />
         </div>
@@ -147,11 +205,11 @@
       <article class="about-grid">
         <div class="about-text">
           <p>
-            Com o Bolt você pode pediar relatórios detalhados de gastos por
+            Com o Bolt você pode pedir relatórios detalhados de gastos por
             categoria, período ou até mesmo por projeto. Tenha uma visão clara.
           </p>
 
-          <a href="checkout.html" class="btn-cta">Começa Agora</a>
+          <a href="checkout.html" class="btn-cta">Começar Agora</a>
         </div>
 
         <div class="divider-image">
@@ -199,7 +257,12 @@
             <li>✅ Suporte exclusivo via WhatsApp</li>
           </ul>
 
-          <a href="checkout.html" class="btn-cta">ASSINAR AGORA</a>
+          <a
+            href="checkout.html"
+            class="btn-cta"
+            onclick="fbq('track', 'InitiateCheckout')"
+            >ASSINAR AGORA</a
+          >
           <p class="cancel-text">Cancele quando quiser. Sem fidelidade.</p>
         </div>
       </div>

@@ -283,13 +283,30 @@ p {
   backdrop-filter: blur(20px);
   padding: 50px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--primary); 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-glow);
 }
 
 .form-wrapper p {
   text-align: center;
   
+}
+
+/* --- SELO DE GARANTIA NO CHECKOUT --- */
+.guarantee-badge {
+  text-align: center;
+  margin: 20px 0; /* Espaço em cima e embaixo para respirar */
+}
+
+.guarantee-badge img {
+  width: 120px; /* Tamanho ideal para não ocupar muito espaço */
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)); /* Um brilho dourado sutil */
+  transition: transform 0.3s ease;
+}
+
+.guarantee-badge img:hover {
+  transform: scale(1.05); /* Pequeno zoom ao passar o mouse */
 }
 
 .input-group label {
@@ -421,12 +438,12 @@ button[type="submit"]:disabled {
   background: rgba(30, 41, 59, 0.4); /* Efeito vidro */
   backdrop-filter: blur(15px);
   border: 2px solid var(--primary); /* Borda verde Zap */
-  padding: 60px 40px;
+  padding: 40px 20px;
   border-radius: 32px;
   text-align: center;
   max-width: 600px; /* Reduzi um pouco para ficar mais elegante */
   width: 100%;
-  margin: 0 auto;
+  margin: 30px 0 ;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-glow);
   
   /* Garante que o conteúdo interno alinhe ao centro */
@@ -474,7 +491,7 @@ button[type="submit"]:disabled {
 .features-list {
   list-style: none;
   padding: 0;
-  margin: 20px 0 40px 0;
+  margin: 20px auto;
   text-align: left; /* Texto alinhado à esquerda para leitura fácil */
   display: inline-block; /* Mantém o bloco centralizado no flex-container */
 }
@@ -504,92 +521,67 @@ footer p {
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 0;
-  }
-  h1 {
-    font-size: 2.5rem;
-  }
-  .chat-mockup {
-    width: 100%;
-    max-width: 350px;
-    margin-top: 30px;
-  }
+  /* --- AJUSTES GERAIS --- */
+  .hero-content,
+  .about-grid,
   .features .container {
     flex-direction: column;
-  }
-  .card {
-    min-width: 100%;
-  }
-
-  /* Ajustes na seção Sobre para mobile */
-  .hero-content,
-  .about-grid {
-    display: flex;
-    flex-direction: column; /* Empilha os elementos no celular */
     text-align: center;
     padding: 40px 0;
   }
 
-  .about-text p {
-    margin: 0 auto 30px auto; /* Centraliza o texto no mobile */
-  }
+  .about-text { order: 1; }
+  .about-image, .divider-image { order: 2; margin-top: 30px; }
 
-  .about-text {
-    order: 1; /* Coloca o texto acima da imagem no celular */
-  }
-
-  .about-image,
-  .divider-image {
-    order: 2;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  .about-text h2 {
-    font-size: 2rem;
-  }
-
-  .about-image {
-    order: 2; /* Coloca a imagem abaixo do texto no celular */
-    margin-top: 30px;
-  }
+  .about-text p { margin: 0 auto 30px auto; }
+  
+  h1 { font-size: 2.5rem; }
+  .about-text h2 { font-size: 2rem; }
 
   .chat-mockup {
-    margin: 30px auto 0 auto;
     width: 100%;
+    max-width: 350px;
+    margin: 30px auto 0 auto;
   }
 
   .image-gallery {
-    flex-direction: column; /* Empilha no celular */
+    flex-direction: column;
     align-items: center;
   }
+  .image-gallery img { max-width: 100%; }
 
-  .image-gallery img {
-    max-width: 100%; /* Ocupa a largura total da tela no celular */
-  }
-
+  /* --- CORREÇÃO DO CARD DE ASSINATURA (Centralização) --- */
   .cta-box-premium {
-    padding: 40px 20px; /* Reduz o espaço interno no celular */
-    margin: 20px 10px; /* Garante margem nas laterais da tela */
+    width: 100%;
+    /* O SEGREDO: Zero margem lateral, pois o container já tem padding */
+    margin: 30px 0; 
+    padding: 40px 25px; 
     border-radius: 24px;
+    box-sizing: border-box;
   }
 
-  .cta-box-premium h2 {
-    font-size: 1.8rem; /* Título menor para não quebrar linha errado */
-  }
+  .cta-box-premium h2 { font-size: 1.8rem; }
+  .price-current { font-size: 2.8rem; }
 
-  .price-current {
-    font-size: 2.5rem; /* Ajusta o tamanho do preço para telas menores */
+  /* Centraliza a lista visualmente */
+  .features-list {
+    display: inline-block;
+    margin: 20px auto;
+    text-align: left;
+    width: auto;
   }
+  
+  .features-list li { font-size: 1rem; }
 
-  .features-list li {
-    font-size: 1rem; /* Texto da lista um pouco menor no mobile */
+  /* --- AJUSTES DO CHECKOUT --- */
+  .form-wrapper h2 {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
   }
+  
+  .form-wrapper p { font-size: 1rem; }
 }
 
 @media (max-width: 480px) {

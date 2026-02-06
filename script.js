@@ -1,10 +1,9 @@
-const API_URL = "https://bolt-financeiro.squareweb.app"; // Tire a barra do final se tiver
+const API_URL = "https://bolt-financeiro.squareweb.app";
 
-// ... (Mantenha as máscaras de phoneInput e cpfInput IGUAIS, não mudei nada lá) ...
+// --- MÁSCARAS DE INPUT ---
 const phoneInput = document.getElementById("phone");
 const cpfInput = document.getElementById("cpf");
 
-// (Cole suas máscaras antigas aqui...)
 phoneInput.addEventListener("input", (e) => {
   let value = e.target.value.replace(/\D/g, "");
   if (value.length > 11) value = value.slice(0, 11);
@@ -27,20 +26,6 @@ cpfInput.addEventListener("input", (e) => {
   e.target.value = value;
 });
 
-// 👇 NOVO: LÓGICA VISUAL DA SELEÇÃO DE PLANO 👇
-const planRadios = document.querySelectorAll('input[name="planType"]');
-planRadios.forEach((radio) => {
-  radio.addEventListener("change", (e) => {
-    // Remove 'active' de todos
-    document
-      .querySelectorAll(".plan-card")
-      .forEach((card) => card.classList.remove("active"));
-    // Adiciona 'active' no pai do input selecionado
-    e.target.closest(".plan-card").classList.add("active");
-  });
-});
-// 👆 FIM DA LÓGICA VISUAL
-
 // --- ENVIO DO FORMULÁRIO ---
 document.getElementById("paymentForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -48,10 +33,8 @@ document.getElementById("paymentForm").addEventListener("submit", async (e) => {
   const btn = document.getElementById("btnPay");
   const msg = document.getElementById("statusMsg");
 
-  // Pega o plano selecionado
-  const selectedPlan = document.querySelector(
-    'input[name="planType"]:checked',
-  ).value;
+  // REMOVEMOS A BUSCA PELO RADIO BUTTON
+  // const selectedPlan = ... (não precisa mais)
 
   btn.disabled = true;
   btn.innerText = "Gerando Pix...";
@@ -63,7 +46,7 @@ document.getElementById("paymentForm").addEventListener("submit", async (e) => {
     email: document.getElementById("email").value,
     phone: document.getElementById("phone").value,
     cpf: document.getElementById("cpf").value,
-    planType: selectedPlan, // <--- ENVIANDO A ESCOLHA PRO BACKEND
+    planType: "monthly", // <--- FORÇAMOS SER MENSAL AQUI
   };
 
   try {
@@ -76,6 +59,11 @@ document.getElementById("paymentForm").addEventListener("submit", async (e) => {
     const result = await response.json();
 
     if (response.ok) {
+      // Se usar Facebook Pixel:
+      if (typeof fbq === "function") {
+        fbq("track", "Purchase", { value: 7.99, currency: "BRL" });
+      }
+
       msg.style.color = "#22c55e";
       msg.innerText = "Sucesso! Redirecionando...";
 

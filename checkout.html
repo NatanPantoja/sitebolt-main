@@ -1,22 +1,94 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
+ <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bolt Financeiro - Controle no WhatsApp</title>
+    <title>Bolt Pan - Controle no WhatsApp</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="/src/img/Icones/Logo.png" />
+
+    <!-- META TAG OG -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bolt Pan - Controle Financeiro" />
+    <meta
+      property="og:image"
+      content="https://boltpan.com.br/src/img/icones/Logo2.jpg"
+    />
+    <meta
+      property="og:description"
+      content="Controle financeiro profissional direto no seu WhatsApp por apenas R$ 7,99/mês."
+    />
+    <meta property="og:url" content="https://boltpan.com.br" />
+    <meta property="og:site_name" content="Bolt Pan" />
+
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1648049966361338");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1648049966361338&ev=PageView&noscript=1"
+    /></noscript>
+
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=SEU_ID_DO_PIXEL&ev=PageView&noscript=1"
+    /></noscript>
   </head>
   <body>
+    <header>
+      <div class="container">
+        <nav>
+          <h2 class="logo">⚡ Bolt Pan</h2>
+        </nav>
+    </header>
+
     <section id="checkout" class="checkout-section">
       <div class="container">
         <div class="form-wrapper">
           <h2>Assine Agora</h2>
           <p>Apenas <strong>R$ 7,99/mês</strong></p>
           <p>Cancele quando quiser.</p>
+
+          <div class="guarantee-badge">
+            <img
+              src="./src/img/icones/7_dias.png"
+              alt="Garantia de 7 dias ou seu dinheiro de volta"
+            />
+          </div>
 
           <form id="paymentForm">
             <div class="input-group">
@@ -56,7 +128,7 @@
               />
             </div>
 
-            <button type="submit" id="btnPay">GERAR PIX DE PAGAMENTO</button>
+            <button type="submit" id="btnPay">GERAR PAGAMENTO</button>
             <p id="statusMsg"></p>
           </form>
         </div>
@@ -64,7 +136,7 @@
     </section>
 
     <footer>
-      <p>© 2026 Bolt Financeiro SaaS. Todos os direitos reservados.</p>
+      <p>© 2026 Bolt Pan. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
