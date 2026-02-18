@@ -424,6 +424,62 @@ button[type="submit"]:disabled {
 } 
 
 
+/* --- ESTILO DA FAQ (PERGUNTAS FREQUENTES) --- */
+.faq-section {
+  margin-bottom: 60px; /* Espaço para não grudar no rodapé */
+}
+
+.faq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 800px; /* Limita a largura para não ficar muito esticado em telas grandes */
+  margin: 0 auto;   /* Centraliza a FAQ na tela */
+}
+
+.faq-section details {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+/* Efeito visual ao passar o mouse */
+.faq-section details:hover {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-color: #ccc;
+}
+
+.faq-section summary {
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none; /* Remove a seta padrão */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-text: center;
+}
+
+/* Adiciona um ícone de + ou setinha customizada (opcional) */
+.faq-section summary::after {
+  content: '+'; 
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.faq-section details[open] summary::after {
+  content: '-';
+}
+
+.faq-section p {
+  margin-top: 10px;
+  color: #555;
+  line-height: 1.6;
+}
+
 
 
 
@@ -458,6 +514,31 @@ button[type="submit"]:disabled {
 
 .cta-box-premium p {
   text-align: center;
+}
+
+/* --- ESTILO DOS SELOS DE SEGURANÇA --- */
+.security-badges {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* O segredo da responsividade aqui é o flex-wrap */
+.security-row {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap; /* ISSO IMPEDE QUE OS ÍCONES QUEBREM EM TELA PEQUENA */
+}
+
+/* --- ESTILO DO RODAPÉ (FOOTER) --- */
+.site-footer {
+  background-color: #111; /* Preto mais suave que #000 */
+  color: #eee;
+  padding: 60px 0 30px;
+  margin-top: 80px;
+  font-size: 0.95rem;
 }
 
 /* Estilo dos Preços Centralizados */
@@ -506,17 +587,72 @@ button[type="submit"]:disabled {
 }
 
 /* --- FOOTER SIMPLES --- */
-footer {
-  padding: 30px 0;
+.site-footer {
+  background-color: #111; /* Preto mais suave que #000 */
+  color: #eee;
+  padding: 60px 0 30px;
+  margin-top: 80px;
+  font-size: 0.95rem;
 }
 
-footer p {
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+
+
+
+.footer-links a:hover {
+  color: #fff; /* Fica branco ao passar o mouse */
+}
+
+.footer-contact p {
+  margin-bottom: 8px;
+  color: #aaa;
+  text-align: center;
+}
+
+.footer-copy {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.footer-copy  p {
   text-align: center;
   margin: 0;
   max-width: none; /* anula o max-width: 500px do p global */
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+
 
 
 /* Responsivo */
@@ -581,7 +717,20 @@ footer p {
     margin-bottom: 10px;
   }
   
-  .form-wrapper p { font-size: 1rem; }
+  .form-wrapper p { 
+    font-size: 1rem; 
+  }
+  .footer-grid {
+    grid-template-columns: 1fr; /* Vira 1 coluna só */
+    text-align: center;
+    gap: 30px;
+  }
+    
+  .faq-grid {
+    width: 100%; /* Ocupa 100% da largura disponível */
+    padding: 0 10px; /* Margem de segurança lateral */
+  }
+
 }
 
 @media (max-width: 480px) {

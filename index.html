@@ -99,7 +99,7 @@
     </header>
 
     <!--SOBRE-->
-    <section class="about-section">
+    <section class="about-section" id="sobre">
       <article class="container">
         <div class="about-grid">
           <div class="about-text">
@@ -176,8 +176,8 @@
 
         <div class="about-image">
           <img
-            src="./src/img/casal-preocupado-com-financas.jpeg"
-            alt="Casal preocupado com finanças"
+            src="./src/img/Money stress-bro.png"
+            alt="Mulher estressada com contas e finanças pessoais"
           />
         </div>
       </article>
@@ -236,6 +236,49 @@
       </article>
     </section>
 
+    <!--FAQ-->
+    <section class="faq-section container">
+      <div class="divider">
+        <h2>Perguntas Frequentes</h2>
+      </div>
+
+      <div class="faq-grid">
+        <details>
+          <summary>Preciso baixar algum aplicativo?</summary>
+          <p>
+            Não! Tudo funciona 100% dentro do seu WhatsApp. Você não precisa
+            instalar nada extra.
+          </p>
+        </details>
+
+        <details>
+          <summary>Meus dados bancários estão seguros?</summary>
+          <p>
+            Sim. O Bolt não tem acesso à sua conta bancária. Nós apenas
+            organizamos as informações que você nos envia por texto ou áudio.
+          </p>
+        </details>
+
+        <details>
+          <summary>Como funciona o cancelamento?</summary>
+          <p>
+            Sem burocracia. Você pode cancelar a qualquer momento enviando
+            "Cancelar" no chat ou pelo painel de controle. Sem multas.
+          </p>
+        </details>
+        <!-- no momento não tem essa função, mas futuramente pode ser adicionada.
+        <details>
+          <summary>Serve para empresas?</summary>
+          <p>
+            Com certeza. Você pode separar seus gastos em categorias "Pessoais"
+            e "Empresa" para ter relatórios distintos.
+          </p>
+        </details>
+        -->
+      </div>
+    </section>
+
+    <!--PAGAMENTO-->
     <section id="checkout" class="subscription-premium">
       <div class="container">
         <div class="cta-box-premium">
@@ -264,12 +307,69 @@
             >ASSINAR AGORA</a
           >
           <p class="cancel-text">Cancele quando quiser. Sem fidelidade.</p>
+
+          <div class="security-badges">
+            <p style="margin-bottom: 5px; font-weight: bold">
+              🔒 Pagamento 100% Seguro
+            </p>
+            <div class="security-row">
+              <span
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  font-size: 0.9rem;
+                "
+                >🛡️ Dados Criptografados</span
+              >
+              <span
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  font-size: 0.9rem;
+                "
+                >✨ Garantia de 7 dias</span
+              >
+              <span
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  font-size: 0.9rem;
+                "
+                >💳 Processado pelo Mercado pago</span
+              >
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div class="container">
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-info">
+          <h3>⚡ Bolt Pan</h3>
+          <p>Seu assistente financeiro inteligente no WhatsApp.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="termos.html">Termos de Uso</a></li>
+            <li><a href="politica.html">Política de Privacidade</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Dúvidas?</h4>
+          <p>suporte@boltpan.com.br</p>
+          <p>CNPJ: XX.XXX.XXX/0001-XX</p>
+        </div>
+      </div>
+
+      <div class="footer-copy">
         <p>© 2026 Bolt Pan. Todos os direitos reservados.</p>
       </div>
     </footer>
