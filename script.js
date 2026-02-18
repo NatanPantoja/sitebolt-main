@@ -33,9 +33,6 @@ document.getElementById("paymentForm").addEventListener("submit", async (e) => {
   const btn = document.getElementById("btnPay");
   const msg = document.getElementById("statusMsg");
 
-  // REMOVEMOS A BUSCA PELO RADIO BUTTON
-  // const selectedPlan = ... (não precisa mais)
-
   btn.disabled = true;
   btn.innerText = "Gerando Pix...";
   msg.innerText = "";
@@ -46,7 +43,7 @@ document.getElementById("paymentForm").addEventListener("submit", async (e) => {
     email: document.getElementById("email").value,
     phone: document.getElementById("phone").value,
     cpf: document.getElementById("cpf").value,
-    planType: "monthly", // <--- FORÇAMOS SER MENSAL AQUI
+    planType: "monthly",
   };
 
   try {
