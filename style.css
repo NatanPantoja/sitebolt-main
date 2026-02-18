@@ -731,6 +731,10 @@ button[type="submit"]:disabled {
     padding: 0 10px; /* Margem de segurança lateral */
   }
 
+  .footer-info p{
+    text-align: center;
+  }
+
 }
 
 @media (max-width: 480px) {
