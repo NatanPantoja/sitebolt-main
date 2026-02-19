@@ -641,6 +641,51 @@ button[type="submit"]:disabled {
   font-size: 0.9rem;
 }
 
+/* --- BOTÃO INSTAGRAM PRO --- */
+.social-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Isso garante que fique centralizado com o e-mail */
+}
+
+.instagram-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05); /* Fundo sutil */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borda fina e elegante */
+  padding: 10px 20px;
+  border-radius: 50px; /* Formato de pílula */
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.instagram-btn svg {
+  transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.instagram-btn:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  border-color: transparent;
+  transform: translateY(-3px); /* Levanta um pouco */
+  box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4); /* Sombra rosa */
+}
+
+.instagram-btn:hover svg {
+  transform: scale(1.1); /* O ícone cresce um pouquinho */
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
   .hero-content,
@@ -737,6 +782,10 @@ button[type="submit"]:disabled {
 
   .footer-info p {
     text-align: center;
+  }
+
+  .instagram-btn {
+    justify-content: center;
   }
 }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bolt Pan - Controle no WhatsApp</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -76,7 +76,7 @@
               Sem apps complicados. Fale com o Bolt como se fosse um amigo e
               receba relatórios completos das suas finanças.
             </p>
-            <a href="checkout.html" class="btn-cta">Começar Agora</a>
+            <a href="/src/page/checkout.html" class="btn-cta">Começar Agora</a>
           </div>
           <div class="image">
             <div class="chat-mockup">
@@ -218,7 +218,7 @@
             categoria, período ou até mesmo por projeto. Tenha uma visão clara.
           </p>
 
-          <a href="checkout.html" class="btn-cta">Começar Agora</a>
+          <a href="/src/page/checkout.html" class="btn-cta">Começar Agora</a>
         </div>
 
         <div class="divider-image">
@@ -315,7 +315,7 @@
           </ul>
 
           <a
-            href="checkout.html"
+            href="/src/page/checkout.html"
             class="btn-cta"
             onclick="fbq('track', 'InitiateCheckout')"
             >ASSINAR AGORA</a
@@ -370,8 +370,10 @@
         <div class="footer-links">
           <h4>Legal</h4>
           <ul>
-            <li><a href="termos.html">Termos de Uso</a></li>
-            <li><a href="politica.html">Política de Privacidade</a></li>
+            <li><a href="/src/page/termos.html">Termos de Uso</a></li>
+            <li>
+              <a href="/src/page/politica.html">Política de Privacidade</a>
+            </li>
             <li><a href="#sobre">Sobre Nós</a></li>
           </ul>
         </div>
@@ -379,7 +381,32 @@
         <div class="footer-contact">
           <h4>Dúvidas?</h4>
           <p>suporteboltpan@gmail.com</p>
-          <!--<p>CNPJ: XX.XXX.XXX/0001-XX</p>-->
+          <div class="social-wrapper">
+            <a
+              href="https://instagram.com/SEU_USUARIO"
+              target="_blank"
+              class="instagram-btn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>Seguir no Instagram</span>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -388,6 +415,6 @@
       </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="/src/script/script.js" defer></script>
   </body>
 </html>
