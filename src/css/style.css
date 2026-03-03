@@ -167,7 +167,7 @@ p {
   /* Espaçamentos: coloquei um espaço maior embaixo (120px) 
      para o corte não encostar na foto nem no texto */
   padding: 60px 0 80px 0;
-  margin-top: 60px;
+  margin-top: 95px;
   transform: none;
 }
 
@@ -180,11 +180,10 @@ p {
 }
 
 /* ========================================== */
-/* --- ANIMAÇÃO DINHEIRO VOANDO (DOR DO CLIENTE) --- */
+/* --- EFEITO DINHEIRO VOANDO (BACKGROUND) --- */
 /* ========================================== */
-
 .pain-section {
-  position: relative; /* Prende a animação apenas dentro desta seção */
+  position: relative;
 }
 
 .flying-money-container {
@@ -193,68 +192,40 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Não atrapalha o clique ou a rolagem da tela */
+  pointer-events: none; /* Não atrapalha o clique na tela */
   z-index: 0;
-  overflow: hidden; /* Corta o dinheiro para não invadir outras partes do site */
+  overflow: hidden;
 }
 
-/* Garante que o texto e a imagem fiquem na frente do dinheiro */
+.ghost-money {
+  position: absolute;
+  bottom: -50px; /* Começa escondido lá embaixo */
+  opacity: 0; /* Começa 100% invisível */
+}
+
+/* Espalha os dinheiros pela tela com tamanhos diferentes */
+.money-1 {
+  left: 10%;
+  width: 90px;
+}
+.money-2 {
+  left: 45%;
+  width: 140px;
+}
+.money-3 {
+  left: 70%;
+  width: 100px;
+}
+.money-4 {
+  left: 85%;
+  width: 160px;
+}
+
+/* Garante que o texto e a foto fiquem sempre na frente do dinheiro */
 .pain-section .about-text,
 .pain-section .about-image {
   position: relative;
   z-index: 2;
-}
-
-.money {
-  position: absolute;
-  font-size: 3rem;
-  bottom: -15%; /* Começa escondido abaixo da tela */
-  opacity: 0;
-  /* O segredo do design premium: deixa o emoji cinza e quase transparente! */
-  filter: grayscale(100%) opacity(0.08);
-  animation: flyUp 7s linear infinite;
-}
-
-/* Espalha o dinheiro pela tela e muda as velocidades para ficar natural */
-.money:nth-child(1) {
-  left: 10%;
-  animation-delay: 0s;
-  animation-duration: 8s;
-}
-.money:nth-child(2) {
-  left: 45%;
-  animation-delay: 2s;
-  animation-duration: 6s;
-  font-size: 2rem;
-}
-.money:nth-child(3) {
-  left: 75%;
-  animation-delay: 4s;
-  animation-duration: 9s;
-}
-.money:nth-child(4) {
-  left: 85%;
-  animation-delay: 1s;
-  animation-duration: 7s;
-  font-size: 4rem;
-}
-
-/* O movimento de subir e balançar */
-@keyframes flyUp {
-  0% {
-    transform: translateY(0) rotate(-15deg);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1; /* Fica visível (mas com a transparência do filter) */
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-800px) rotate(25deg); /* Sobe bastante e gira um pouco */
-    opacity: 0; /* Some suavemente */
-  }
 }
 
 .about-text {
